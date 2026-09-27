@@ -40,6 +40,80 @@ export async function onRequestPost(context) {
             });
         }
 
+        // Check that the Resend API key exists
+        if (!context.env.RESEND_API_KEY) {
+            return new Response(
+                "Email service is not configured. Please try again later.",
+                {
+                    status: 500,
+                    headers: {
+                        "Content-Type": "text/plain; charset=UTF-8"
+                    }
+                }
+            );
+        }
+
+        // Send enquiry through Resend
+        const resendResponse = await fetch(
+            "https://api.resend.com/emails",
+            {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${context.env.RESEND_API_KEY}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    from: "Lindeka Website <website@lindeka.co.za>",
+                    to: ["info@lindeka.co.za"],
+                    reply_to: email,
+                    subject: `New Website Enquiry — ${service}`,
+                    html: `
+                        <h2>New Website Enquiry</h2>
+
+                        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+
+                        <p><strong>Email:</strong>
+                            ${escapeHtml(email)}
+                        </p>
+
+                        <p><strong>Service:</strong>
+                            ${escapeHtml(service)}
+                        </p>
+
+                        <h3>Message</h3>
+
+                        <p>
+                            ${escapeHtml(message).replace(/\n/g, "<br>")}
+                        </p>
+
+                        <hr>
+
+                        <p>
+                            This enquiry was submitted through
+                            <strong>lindeka.co.za</strong>.
+                        </p>
+                    `
+                })
+            }
+        );
+
+        if (!resendResponse.ok) {
+            const resendError = await resendResponse.text();
+
+            console.error("Resend error:", resendError);
+
+            return new Response(
+                "Your enquiry could not be delivered by email. Please try again later.",
+                {
+                    status: 500,
+                    headers: {
+                        "Content-Type": "text/plain; charset=UTF-8"
+                    }
+                }
+            );
+        }
+
+        // Show the existing Thank You page
         return new Response(`
 <!DOCTYPE html>
 <html lang="en">
@@ -135,6 +209,8 @@ export async function onRequestPost(context) {
         });
 
     } catch (error) {
+        console.error("Enquiry processing error:", error);
+
         return new Response(
             "There was a problem processing your enquiry. Please try again.",
             {

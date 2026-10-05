@@ -544,3 +544,269 @@ footer{background:linear-gradient(180deg,#030711,#02050b)}
 .footer-brand{display:flex;align-items:center;gap:9px}
 @media(max-width:900px){.hero .container:before{display:none}.hero-card{min-height:420px}}
 @media(max-width:720px){.hero-card{min-height:0}.hero-card:after{opacity:.6}.project:before{display:none}.section-heading:after{bottom:-13px}.steps>div:after{right:4px;top:29px}}
+
+
+/* Advanced cybersecurity graphics pass */
+.hero,
+.intro,
+.services,
+.packages,
+.projects,
+.about,
+.faq,
+.cta-band,
+.dark-section{
+  position:relative;
+  isolation:isolate;
+}
+
+/* Technical mesh / scan atmosphere */
+.hero:before{
+  z-index:-2;
+  width:620px;
+  height:620px;
+  right:-190px;
+  top:-245px;
+  border-color:rgba(34,211,238,.16);
+  box-shadow:
+    0 0 0 80px rgba(34,211,238,.025),
+    0 0 0 160px rgba(34,211,238,.018),
+    0 0 0 240px rgba(34,211,238,.012);
+}
+.hero:after{
+  z-index:-1;
+  width:520px;
+  height:260px;
+  left:auto;
+  right:4%;
+  bottom:5%;
+  border-radius:0;
+  background:
+    linear-gradient(90deg,transparent,rgba(34,211,238,.55),transparent) 0 35%/100% 1px no-repeat,
+    linear-gradient(90deg,transparent,rgba(56,189,248,.28),transparent) 0 68%/100% 1px no-repeat;
+  box-shadow:none;
+  opacity:.5;
+}
+.hero .container:after{
+  content:'';
+  position:absolute;
+  right:1%;
+  top:23%;
+  width:420px;
+  height:260px;
+  opacity:.55;
+  background-image:
+    radial-gradient(circle,rgba(34,211,238,.85) 0 2px,transparent 3px),
+    radial-gradient(circle,rgba(56,189,248,.55) 0 1.5px,transparent 2.5px);
+  background-size:120px 90px,75px 65px;
+  background-position:10px 10px,40px 25px;
+  mask-image:linear-gradient(135deg,transparent 0%,#000 25%,#000 78%,transparent 100%);
+  pointer-events:none;
+}
+.hero-grid:before{
+  content:'';
+  position:absolute;
+  right:5%;
+  top:9%;
+  width:430px;
+  height:300px;
+  opacity:.28;
+  background:
+    linear-gradient(28deg,transparent 48%,rgba(34,211,238,.5) 49%,transparent 50%) 0 0/150px 105px,
+    linear-gradient(-25deg,transparent 48%,rgba(56,189,248,.42) 49%,transparent 50%) 0 0/150px 105px;
+  pointer-events:none;
+  z-index:-1;
+}
+
+/* Animated signal sweep */
+.hero-card:before{
+  background:
+    linear-gradient(90deg,transparent 49.4%,rgba(56,189,248,.08) 50%,transparent 50.6%),
+    linear-gradient(0deg,transparent 49.4%,rgba(56,189,248,.08) 50%,transparent 50.6%),
+    linear-gradient(115deg,transparent 42%,rgba(34,211,238,.08) 50%,transparent 58%);
+  background-size:56px 56px,56px 56px,100% 100%;
+  animation:networkPulse 9s ease-in-out infinite;
+}
+@keyframes networkPulse{
+  0%,100%{opacity:.28;transform:translate3d(0,0,0)}
+  50%{opacity:.55;transform:translate3d(8px,-5px,0)}
+}
+
+/* Glowing security core */
+.shield{
+  position:relative;
+}
+.shield:before,
+.shield:after{
+  content:'';
+  position:absolute;
+  border:1px solid rgba(34,211,238,.35);
+  border-radius:50%;
+  pointer-events:none;
+}
+.shield:before{
+  width:86px;
+  height:86px;
+  animation:orbitPulse 5s ease-in-out infinite;
+}
+.shield:after{
+  width:120px;
+  height:120px;
+  border-style:dashed;
+  opacity:.35;
+  animation:spin 18s linear infinite;
+}
+@keyframes orbitPulse{
+  0%,100%{transform:scale(.86);opacity:.15}
+  50%{transform:scale(1);opacity:.6}
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Section-level technical corner graphics */
+.intro:before,
+.services:before,
+.packages:before,
+.projects:before,
+.about:before,
+.faq:before{
+  content:'';
+  position:absolute;
+  width:180px;
+  height:180px;
+  pointer-events:none;
+  opacity:.28;
+  border:1px solid rgba(34,211,238,.14);
+  background:
+    linear-gradient(90deg,transparent 49.5%,rgba(34,211,238,.13) 50%,transparent 50.5%),
+    linear-gradient(0deg,transparent 49.5%,rgba(34,211,238,.13) 50%,transparent 50.5%);
+  background-size:45px 45px;
+  mask-image:linear-gradient(135deg,#000,transparent 72%);
+}
+.intro:before{right:-55px;top:-55px;border-radius:50%}
+.services:before{left:-75px;bottom:-75px;transform:rotate(18deg)}
+.packages:before{right:-75px;top:50%;transform:rotate(45deg)}
+.projects:before{left:-65px;top:12%;border-radius:50%}
+.about:before{right:-70px;bottom:-70px}
+.faq:before{right:-70px;top:-70px;border-radius:50%}
+
+/* Service cards gain individual signal markers */
+.service-card:after{
+  content:'';
+  position:absolute;
+  right:22px;
+  top:25px;
+  width:34px;
+  height:34px;
+  border:1px solid rgba(34,211,238,.13);
+  border-radius:8px;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(34,211,238,.7) 0 2px,transparent 3px),
+    linear-gradient(90deg,transparent 48%,rgba(34,211,238,.18) 49%,transparent 51%),
+    linear-gradient(0deg,transparent 48%,rgba(34,211,238,.18) 49%,transparent 51%);
+}
+.service-card:hover:after{
+  border-color:rgba(34,211,238,.4);
+  box-shadow:0 0 20px rgba(34,211,238,.08);
+}
+
+/* Package cards get subtle data bars */
+.package:before{
+  content:'';
+  position:absolute;
+  left:33px;
+  bottom:25px;
+  width:68px;
+  height:3px;
+  background:linear-gradient(90deg,var(--accent) 0 25%,rgba(34,211,238,.22) 25% 48%,rgba(34,211,238,.1) 48% 100%);
+  opacity:.65;
+}
+.package{position:relative;overflow:hidden}
+
+/* Portfolio cards get technical trace lines */
+.project:after{
+  width:150px;
+  height:150px;
+  right:-65px;
+  bottom:-65px;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(34,211,238,.16) 0 2px,transparent 3px),
+    linear-gradient(135deg,transparent 48%,rgba(34,211,238,.14) 49%,transparent 50%);
+  background-size:auto,45px 45px;
+  box-shadow:0 0 0 24px rgba(34,211,238,.012),0 0 0 48px rgba(34,211,238,.008);
+}
+
+/* Approach timeline becomes visibly technical */
+.steps{
+  position:relative;
+}
+.steps:before{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top:-1px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(34,211,238,.55),transparent);
+}
+.steps>div:after{
+  width:8px;
+  height:8px;
+  top:-5px;
+  right:28px;
+}
+.steps>div:before{
+  content:'';
+  position:absolute;
+  right:31px;
+  top:0;
+  width:1px;
+  height:31px;
+  background:linear-gradient(var(--accent),transparent);
+  opacity:.5;
+}
+
+/* CTA network field */
+.cta-band:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.3;
+  background:
+    linear-gradient(25deg,transparent 49.7%,rgba(34,211,238,.13) 50%,transparent 50.3%) 0 0/180px 100px,
+    linear-gradient(-25deg,transparent 49.7%,rgba(56,189,248,.1) 50%,transparent 50.3%) 0 0/180px 100px;
+}
+.cta-band:after{
+  content:'';
+  position:absolute;
+  right:8%;
+  top:50%;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:
+    -120px -50px 0 -2px rgba(34,211,238,.65),
+    -240px 35px 0 -3px rgba(56,189,248,.55),
+    -70px 90px 0 -2px rgba(34,211,238,.5),
+    0 0 24px rgba(34,211,238,.75);
+  opacity:.8;
+}
+
+/* Footer technical baseline */
+footer:before{
+  content:'';
+  display:block;
+  height:1px;
+  margin-bottom:28px;
+  background:linear-gradient(90deg,transparent,rgba(34,211,238,.35),transparent);
+}
+
+@media(max-width:720px){
+  .hero .container:after,
+  .hero-grid:before{width:250px;height:180px;right:-35px;opacity:.3}
+  .hero:after{right:-50px;width:300px}
+  .service-card:after{right:16px;top:20px}
+  .intro:before,.services:before,.packages:before,.projects:before,.about:before,.faq:before{opacity:.16}
+  .steps>div:before{display:none}
+}

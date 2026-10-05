@@ -1033,3 +1033,194 @@ footer:before{
 @media(max-width:720px){
   .package-visual,.project-visual{height:82px;margin:15px 0 18px}
 }
+
+
+/* Next visual graphics pass — richer technical presentation */
+.hero-visual{
+  transform:perspective(900px) rotateY(-3deg);
+  transform-origin:center right;
+}
+.hero-visual:before{
+  content:'';
+  position:absolute;
+  left:6%;
+  right:6%;
+  top:8%;
+  bottom:8%;
+  border:1px solid rgba(34,211,238,.10);
+  border-radius:18px;
+  background:
+    linear-gradient(90deg,transparent 24%,rgba(34,211,238,.07) 25%,transparent 26%,transparent 49%,rgba(34,211,238,.07) 50%,transparent 51%,transparent 74%,rgba(34,211,238,.07) 75%,transparent 76%),
+    linear-gradient(0deg,transparent 24%,rgba(34,211,238,.06) 25%,transparent 26%,transparent 49%,rgba(34,211,238,.06) 50%,transparent 51%,transparent 74%,rgba(34,211,238,.06) 75%,transparent 76%);
+  background-size:100% 100%;
+}
+.hero-visual:after{
+  inset:15% 14%;
+  border:1px solid rgba(34,211,238,.16);
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(34,211,238,.12) 0 2px,transparent 3px),
+    conic-gradient(from 20deg,transparent 0 20%,rgba(34,211,238,.14) 21% 22%,transparent 23% 48%,rgba(56,189,248,.10) 49% 50%,transparent 51%);
+  animation:radarSweep 8s linear infinite;
+}
+@keyframes radarSweep{
+  to{transform:rotate(360deg)}
+}
+
+.hero-card{
+  background:
+    radial-gradient(circle at 72% 28%,rgba(34,211,238,.13),transparent 28%),
+    linear-gradient(145deg,rgba(14,29,48,.98),rgba(5,13,25,.99));
+}
+.hero-card .card-kicker:before{
+  content:'●';
+  margin-right:7px;
+  color:var(--accent);
+  text-shadow:0 0 12px rgba(34,211,238,.8);
+}
+.hero-card .mini-metrics>div{
+  position:relative;
+}
+.hero-card .mini-metrics>div:after{
+  content:'';
+  display:block;
+  height:2px;
+  margin-top:9px;
+  width:100%;
+  background:linear-gradient(90deg,var(--accent),rgba(34,211,238,.08));
+  transform-origin:left;
+  animation:metricPulse 3.8s ease-in-out infinite;
+}
+.hero-card .mini-metrics>div:nth-child(2):after{animation-delay:.7s}
+.hero-card .mini-metrics>div:nth-child(3):after{animation-delay:1.3s}
+@keyframes metricPulse{
+  0%,100%{transform:scaleX(.45);opacity:.35}
+  50%{transform:scaleX(1);opacity:.9}
+}
+
+/* Add a stronger visual identity to service cards without changing content */
+.service-visual{
+  box-shadow:inset 0 0 30px rgba(34,211,238,.025);
+}
+.service-visual:after{
+  content:'';
+  position:absolute;
+  width:72%;
+  height:1px;
+  left:14%;
+  bottom:13px;
+  background:linear-gradient(90deg,transparent,rgba(34,211,238,.35),transparent);
+  box-shadow:0 0 16px rgba(34,211,238,.10);
+}
+.service-card:nth-child(1) .service-visual:after{background:linear-gradient(90deg,transparent,rgba(56,189,248,.45),transparent)}
+.service-card:nth-child(3) .service-visual:after{background:linear-gradient(90deg,transparent,rgba(45,212,191,.42),transparent)}
+.service-card:nth-child(4) .service-visual:after{background:linear-gradient(90deg,transparent,rgba(129,140,248,.42),transparent)}
+.service-card:nth-child(5) .service-visual:after{background:linear-gradient(90deg,transparent,rgba(34,211,238,.45),transparent)}
+.service-card:nth-child(6) .service-visual:after{background:linear-gradient(90deg,transparent,rgba(56,189,248,.45),transparent)}
+
+/* Technical corner brackets on packages and projects */
+.package-visual:after,
+.project-visual:after{
+  content:'';
+  position:absolute;
+  inset:9px;
+  border:1px solid rgba(34,211,238,.07);
+  border-radius:8px;
+  clip-path:polygon(0 0,18% 0,18% 1px,82% 1px,82% 0,100% 0,100% 18%,calc(100% - 1px) 18%,calc(100% - 1px) 82%,100% 82%,100% 100%,82% 100%,82% calc(100% - 1px),18% calc(100% - 1px),18% 100%,0 100%,0 82%,1px 82%,1px 18%,0 18%);
+  pointer-events:none;
+}
+.package-visual svg,.project-visual svg{
+  position:relative;
+  z-index:2;
+}
+
+/* Portfolio visuals feel more like technical system diagrams */
+.project-visual{
+  box-shadow:inset 0 0 35px rgba(34,211,238,.025);
+}
+.project-visual:before{
+  animation:diagramDrift 12s linear infinite;
+}
+@keyframes diagramDrift{
+  0%{background-position:0 0}
+  50%{background-position:12px -8px}
+  100%{background-position:0 0}
+}
+
+/* Approach gets a clearer system-flow treatment */
+.steps>div{
+  background:linear-gradient(180deg,rgba(34,211,238,.025),transparent 65%);
+  padding-left:18px;
+  border-left:1px solid rgba(34,211,238,.08);
+}
+.steps>div:first-child{border-left-color:rgba(34,211,238,.24)}
+.steps>div:nth-child(2){border-left-color:rgba(34,211,238,.15)}
+.steps>div:nth-child(3){border-left-color:rgba(34,211,238,.10)}
+.steps span{
+  display:inline-flex;
+  min-width:30px;
+  height:22px;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(34,211,238,.24);
+  border-radius:4px;
+  background:rgba(34,211,238,.05);
+}
+
+/* FAQ receives subtle technical indexing */
+.faq details{
+  position:relative;
+  padding-left:36px;
+}
+.faq details:before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:25px;
+  width:14px;
+  height:14px;
+  border:1px solid rgba(34,211,238,.28);
+  border-radius:3px;
+  background:radial-gradient(circle,rgba(34,211,238,.65) 0 2px,transparent 3px);
+}
+.faq details[open]:before{
+  box-shadow:0 0 16px rgba(34,211,238,.12);
+  border-color:rgba(34,211,238,.55);
+}
+
+/* Contact section gets a technical frame around the form */
+.contact-form{
+  position:relative;
+}
+.contact-form:before{
+  content:'SECURE ENQUIRY';
+  position:absolute;
+  right:18px;
+  top:-9px;
+  padding:0 8px;
+  background:#07111e;
+  color:rgba(34,211,238,.65);
+  font:700 8px/1 'Space Grotesk',sans-serif;
+  letter-spacing:.18em;
+}
+.contact-form:after{
+  content:'';
+  position:absolute;
+  inset:7px;
+  border:1px solid rgba(34,211,238,.05);
+  border-radius:7px;
+  pointer-events:none;
+}
+.contact-form>*{position:relative;z-index:2}
+
+/* Reduced motion remains comfortable for accessibility */
+@media(prefers-reduced-motion:reduce){
+  .hero-visual,
+  .hero-visual:after,
+  .hero-card:before,
+  .hero-card .mini-metrics>div:after,
+  .project-visual:before,
+  .package-visual svg,
+  .project-visual svg,
+  .visual-ai svg{animation:none!important}
+}

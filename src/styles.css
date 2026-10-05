@@ -854,3 +854,83 @@ footer:before{
   .hero-visual{inset:15px 10px auto;height:180px}
   .hero-card .shield{margin-top:150px}
 }
+
+
+/* Service-specific graphical illustrations */
+.service-card{
+  position:relative;
+  overflow:hidden;
+}
+.service-visual{
+  height:112px;
+  margin:18px 0 24px;
+  border:1px solid rgba(34,211,238,.14);
+  border-radius:14px;
+  background:
+    radial-gradient(circle at 70% 30%,rgba(34,211,238,.12),transparent 38%),
+    linear-gradient(135deg,rgba(7,18,32,.96),rgba(10,28,43,.72));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+}
+.service-visual:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,transparent 49.5%,rgba(34,211,238,.08) 50%,transparent 50.5%),
+    linear-gradient(0deg,transparent 49.5%,rgba(34,211,238,.08) 50%,transparent 50.5%);
+  background-size:28px 28px;
+}
+.service-visual svg{
+  width:88%;
+  height:88%;
+  fill:none;
+  stroke:#22d3ee;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  position:relative;
+  z-index:1;
+  filter:drop-shadow(0 0 7px rgba(34,211,238,.2));
+}
+.visual-it svg rect:first-child,
+.visual-grc svg rect:first-child{fill:rgba(34,211,238,.035)}
+.visual-cyber svg path:first-child{fill:rgba(34,211,238,.06)}
+.visual-ai svg circle:first-child{fill:rgba(34,211,238,.08)}
+.visual-data svg circle{fill:#071522}
+.visual-gis svg circle{fill:#071522}
+.service-card:nth-child(2) .service-visual{background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.17),transparent 48%),linear-gradient(135deg,#07111e,#0a2434)}
+.service-card:nth-child(3) .service-visual{background:radial-gradient(circle at 50% 45%,rgba(45,212,191,.13),transparent 48%),linear-gradient(135deg,#07111e,#102522)}
+.service-card:nth-child(4) .service-visual{background:radial-gradient(circle at 50% 50%,rgba(99,102,241,.14),transparent 48%),linear-gradient(135deg,#07111e,#121b38)}
+.service-card:hover .service-visual{
+  border-color:rgba(34,211,238,.4);
+  transform:translateY(-2px);
+  box-shadow:0 12px 35px rgba(34,211,238,.08);
+}
+.service-visual{transition:.3s ease}
+.service-card h3,.service-card p,.service-card ul{position:relative;z-index:2}
+
+/* GRC control visual gets a live risk indicator */
+.visual-grc:after{
+  content:'RISK  •  CONTROL  •  GAP';
+  position:absolute;
+  right:12px;
+  bottom:9px;
+  font-size:7px;
+  letter-spacing:.14em;
+  color:rgba(167,243,208,.7);
+}
+
+/* AI visual gets a neural pulse */
+.visual-ai svg{animation:neuralPulse 4s ease-in-out infinite}
+@keyframes neuralPulse{
+  0%,100%{transform:scale(.96);opacity:.72}
+  50%{transform:scale(1);opacity:1}
+}
+
+@media(max-width:720px){
+  .service-visual{height:96px;margin:15px 0 20px}
+}

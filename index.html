@@ -105,14 +105,22 @@
     <svg viewBox="0 0 520 330" role="presentation">
         <defs>
             <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#22d3ee" stop-opacity=".9"/>
-                <stop offset="1" stop-color="#38bdf8" stop-opacity=".15"/>
+                <stop offset="0" stop-color="#67e8f9" stop-opacity=".95"/>
+                <stop offset=".55" stop-color="#22d3ee" stop-opacity=".65"/>
+                <stop offset="1" stop-color="#38bdf8" stop-opacity=".12"/>
+            </linearGradient>
+            <linearGradient id="heroShield" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#22d3ee" stop-opacity=".24"/>
+                <stop offset="1" stop-color="#0ea5e9" stop-opacity=".04"/>
             </linearGradient>
             <filter id="glow">
                 <feGaussianBlur stdDeviation="5" result="b"/>
                 <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
         </defs>
+        <path d="M325 38 405 68v45c0 48-31 76-80 92-49-16-80-44-80-92V68z" fill="url(#heroShield)" stroke="#22d3ee" stroke-opacity=".25"/>
+        <path d="M325 62 382 84v31c0 34-22 54-57 67-35-13-57-33-57-67V84z" fill="none" stroke="#67e8f9" stroke-opacity=".28"/>
+        <path d="m290 116 25 25 48-55" fill="none" stroke="#67e8f9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
         <g fill="none" stroke="url(#lg)" stroke-width="1.5">
             <path d="M60 245 L145 165 L235 215 L325 105 L430 155 L475 70"/>
             <path d="M60 245 L205 275 L325 105 L390 255 L475 70"/>

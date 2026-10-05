@@ -934,3 +934,102 @@ footer:before{
 @media(max-width:720px){
   .service-visual{height:96px;margin:15px 0 20px}
 }
+
+
+/* Package and portfolio illustration layer */
+.package-visual{
+  height:92px;
+  margin:18px 0 22px;
+  border:1px solid rgba(34,211,238,.14);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(34,211,238,.13),transparent 48%),
+    linear-gradient(135deg,#07111e,#0a1c2d);
+}
+.package-visual:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,transparent 49.5%,rgba(34,211,238,.08) 50%,transparent 50.5%),
+    linear-gradient(0deg,transparent 49.5%,rgba(34,211,238,.08) 50%,transparent 50.5%);
+  background-size:26px 26px;
+}
+.package-visual svg{
+  width:92%;
+  height:88%;
+  fill:none;
+  stroke:#22d3ee;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  position:relative;
+  z-index:1;
+  filter:drop-shadow(0 0 7px rgba(34,211,238,.18));
+}
+.visual-package-it svg rect:first-child{fill:rgba(34,211,238,.045)}
+.visual-package-cyber{background:radial-gradient(circle,rgba(34,211,238,.16),transparent 48%),linear-gradient(135deg,#07111e,#0a2434)}
+.visual-package-cyber svg circle:first-child{fill:rgba(34,211,238,.07)}
+.visual-package-grc{background:radial-gradient(circle at 50% 45%,rgba(45,212,191,.13),transparent 48%),linear-gradient(135deg,#07111e,#102522)}
+.visual-package-grc svg rect{fill:rgba(34,211,238,.025)}
+.package:hover .package-visual{border-color:rgba(34,211,238,.38);box-shadow:0 10px 30px rgba(34,211,238,.07);transform:translateY(-2px)}
+.package-visual{transition:.3s ease}
+
+.project-visual{
+  height:92px;
+  margin:18px 0 22px;
+  border:1px solid rgba(34,211,238,.12);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(135deg,rgba(7,17,30,.95),rgba(11,28,44,.75));
+}
+.project-visual:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(34,211,238,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(34,211,238,.055) 1px,transparent 1px);
+  background-size:24px 24px;
+}
+.project-visual svg{
+  width:94%;
+  height:88%;
+  fill:none;
+  stroke:#22d3ee;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  position:relative;
+  z-index:1;
+  filter:drop-shadow(0 0 6px rgba(34,211,238,.16));
+}
+.visual-project-cyber{background:radial-gradient(circle at 70% 35%,rgba(34,211,238,.12),transparent 42%),linear-gradient(135deg,#07111e,#0a2031)}
+.visual-project-grc{background:radial-gradient(circle at 50% 50%,rgba(45,212,191,.1),transparent 46%),linear-gradient(135deg,#07111e,#10231f)}
+.visual-project-id{background:radial-gradient(circle at 50% 50%,rgba(99,102,241,.12),transparent 45%),linear-gradient(135deg,#07111e,#111a34)}
+.visual-project-data{background:radial-gradient(circle at 60% 40%,rgba(34,211,238,.1),transparent 45%),linear-gradient(135deg,#07111e,#0b2030)}
+.visual-project-policy{background:radial-gradient(circle at 70% 50%,rgba(167,243,208,.08),transparent 45%),linear-gradient(135deg,#07111e,#10231f)}
+.visual-project-gis{background:radial-gradient(circle at 55% 45%,rgba(56,189,248,.1),transparent 45%),linear-gradient(135deg,#07111e,#0a2030)}
+.project:hover .project-visual{border-color:rgba(34,211,238,.35);transform:translateY(-2px);box-shadow:0 10px 32px rgba(34,211,238,.06)}
+.project-visual{transition:.3s ease}
+
+@keyframes graphicFloat{
+  0%,100%{transform:translateY(0);opacity:.78}
+  50%{transform:translateY(-2px);opacity:1}
+}
+.package-visual svg,.project-visual svg{animation:graphicFloat 4s ease-in-out infinite}
+.package:nth-child(2) .package-visual svg,.project:nth-child(3) .project-visual svg{animation-delay:.8s}
+.package:nth-child(3) .package-visual svg,.project:nth-child(4) .project-visual svg{animation-delay:1.5s}
+
+@media(max-width:720px){
+  .package-visual,.project-visual{height:82px;margin:15px 0 18px}
+}

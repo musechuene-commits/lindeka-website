@@ -508,3 +508,39 @@ footer{background:#030711;color:#77879d;padding:34px 0;border-top:1px solid var(
 .contact-form{padding:28px;border-radius:9px;box-shadow:0 30px 75px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.035)}
 footer{padding:36px 0}
 @media(max-width:720px){.hero{min-height:0}.section{padding:76px 0}.hero-grid{gap:42px}}
+
+
+/* Enterprise visual refinement */
+.site-header{box-shadow:0 12px 40px rgba(0,0,0,.16)}
+.brand-name{white-space:nowrap}
+.nav-links a:not(.nav-cta){position:relative}
+.nav-links a:not(.nav-cta):after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+.nav-links a:not(.nav-cta):hover:after{transform:scaleX(1)}
+
+.hero{isolation:isolate}
+.hero .container:before{content:'LINDEKA / TECHNOLOGY / SECURITY / RISK';position:absolute;top:34px;right:0;color:rgba(145,160,182,.34);font:600 9px/1 'Space Grotesk',sans-serif;letter-spacing:.22em}
+.hero-grid:after{content:'';position:absolute;left:0;bottom:-58px;width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(34,211,238,.22),transparent);pointer-events:none}
+.hero-card{min-height:470px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-card .shield{align-self:flex-start}
+.hero-card:before{background-size:56px 56px;opacity:.38}
+.hero-card .mini-metrics strong{letter-spacing:-.04em}
+
+.section-heading h2,.split h2,.about h2,.cta-band h2{font-weight:600}
+.section-heading{position:relative}
+.section-heading:after{content:'';display:block;width:46px;height:2px;background:var(--accent);position:absolute;left:0;bottom:-17px;box-shadow:0 0 16px rgba(34,211,238,.3)}
+.service-card,.package,.project{backdrop-filter:blur(8px)}
+.service-card h3,.package h3,.project h3{font-weight:600}
+.service-card ul,.package ul{border-top:1px solid rgba(148,163,184,.09);padding-top:13px}
+.project-grid .project:nth-child(odd){background:linear-gradient(155deg,rgba(13,27,46,.94),rgba(8,17,30,.92))}
+.project-grid .project:nth-child(even){background:linear-gradient(155deg,rgba(10,22,39,.92),rgba(7,15,27,.96))}
+.project:before{content:'CASE';position:absolute;right:24px;top:25px;font:700 8px/1 'Space Grotesk';letter-spacing:.18em;color:rgba(145,160,182,.35)}
+.package-main{position:relative;overflow:hidden}
+.package-main:after{content:'RECOMMENDED';position:absolute;right:-34px;top:19px;transform:rotate(45deg);font:700 8px/1 'Space Grotesk';letter-spacing:.16em;color:#03202a;background:var(--accent);padding:6px 35px}
+.steps>div{position:relative}
+.steps>div:after{content:'';position:absolute;right:22px;top:31px;width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px rgba(34,211,238,.65)}
+.contact-form{backdrop-filter:blur(12px)}
+.contact-form .btn-primary{min-height:46px}
+footer{background:linear-gradient(180deg,#030711,#02050b)}
+.footer-brand{display:flex;align-items:center;gap:9px}
+@media(max-width:900px){.hero .container:before{display:none}.hero-card{min-height:420px}}
+@media(max-width:720px){.hero-card{min-height:0}.hero-card:after{opacity:.6}.project:before{display:none}.section-heading:after{bottom:-13px}.steps>div:after{right:4px;top:29px}}

@@ -1224,3 +1224,72 @@ footer:before{
   .project-visual svg,
   .visual-ai svg{animation:none!important}
 }
+
+
+/* Reference-style graphics enhancement — CSS only */
+.hero-visual{
+  min-height:330px;
+  overflow:hidden;
+  border:1px solid rgba(34,211,238,.18);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 68% 35%,rgba(34,211,238,.16),transparent 25%),
+    radial-gradient(circle at 30% 75%,rgba(56,189,248,.10),transparent 30%),
+    linear-gradient(145deg,#071625,#030a13);
+  box-shadow:inset 0 0 50px rgba(34,211,238,.05),0 18px 50px rgba(0,0,0,.24);
+}
+.hero-visual svg{
+  width:100%;
+  height:100%;
+  min-height:330px;
+  filter:drop-shadow(0 0 10px rgba(34,211,238,.12));
+}
+.hero-visual svg:after{content:''}
+.hero-card .shield{
+  position:relative;
+  z-index:4;
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  margin-top:-18px;
+  border:1px solid rgba(34,211,238,.42);
+  border-radius:14px;
+  background:linear-gradient(145deg,rgba(34,211,238,.14),rgba(5,13,25,.92));
+  box-shadow:0 0 28px rgba(34,211,238,.12),inset 0 0 18px rgba(34,211,238,.06);
+  color:#67e8f9;
+  font-size:26px;
+}
+.service-visual{
+  height:150px;
+  border-radius:14px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 72% 35%,rgba(34,211,238,.14),transparent 28%),
+    linear-gradient(145deg,#071625,#040b14);
+  border:1px solid rgba(34,211,238,.13);
+  box-shadow:inset 0 0 35px rgba(34,211,238,.045);
+}
+.service-visual svg{
+  width:100%;
+  height:100%;
+  padding:14px;
+  overflow:visible;
+  transform:scale(1.05);
+  filter:drop-shadow(0 0 7px rgba(34,211,238,.16));
+}
+.service-visual svg rect,
+.service-visual svg circle,
+.service-visual svg path{
+  stroke-width:2;
+}
+.service-card.featured .service-visual{
+  border-color:rgba(34,211,238,.30);
+  box-shadow:inset 0 0 45px rgba(34,211,238,.08),0 0 28px rgba(34,211,238,.05);
+}
+.package-visual,.project-visual{
+  min-height:105px;
+  background:
+    radial-gradient(circle at 75% 30%,rgba(34,211,238,.10),transparent 25%),
+    linear-gradient(145deg,#071625,#040b14);
+}

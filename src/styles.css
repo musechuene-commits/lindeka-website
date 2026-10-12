@@ -1770,3 +1770,11 @@ img,svg{max-width:100%}
 .hero-visual:after{
   display:none;
 }
+
+/* Improve visibility of the small technical label above the homepage hero image */
+.hero .container:before{
+  color:rgba(210,230,245,.82);
+  font-size:10px;
+  letter-spacing:.16em;
+  text-shadow:0 1px 8px rgba(0,0,0,.8);
+}

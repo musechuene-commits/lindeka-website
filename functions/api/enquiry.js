@@ -4,7 +4,6 @@ export async function onRequestPost(context) {
 
         const name = String(formData.get("name") || "").trim();
         const email = String(formData.get("email") || "").trim();
-        const service = "General IT or security enquiry";
         const message = String(formData.get("message") || "").trim();
         const website = String(formData.get("website") || "").trim();
 

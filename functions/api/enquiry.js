@@ -4,7 +4,7 @@ export async function onRequestPost(context) {
 
         const name = String(formData.get("name") || "").trim();
         const email = String(formData.get("email") || "").trim();
-        const service = String(formData.get("service") || "").trim();
+        const service = "General IT or security enquiry";
         const message = String(formData.get("message") || "").trim();
         const website = String(formData.get("website") || "").trim();
 
@@ -19,7 +19,7 @@ export async function onRequestPost(context) {
         }
 
         // Required-field validation
-        if (!name || !email || !service || !message) {
+        if (!name || !email) {
             return new Response("Please complete all required fields.", {
                 status: 400,
                 headers: {
@@ -66,7 +66,7 @@ export async function onRequestPost(context) {
                     from: "Lindeka Website <website@lindeka.co.za>",
                     to: ["info@lindeka.co.za"],
                     reply_to: email,
-                    subject: `New Website Enquiry — ${service}`,
+                    subject: "New Website Enquiry",
                     html: `
                         <h2>New Website Enquiry</h2>
 
@@ -74,10 +74,6 @@ export async function onRequestPost(context) {
 
                         <p><strong>Email:</strong>
                             ${escapeHtml(email)}
-                        </p>
-
-                        <p><strong>Service:</strong>
-                            ${escapeHtml(service)}
                         </p>
 
                         <h3>Message</h3>
@@ -182,11 +178,6 @@ export async function onRequestPost(context) {
 
         <p>
             Your enquiry has been received by Lindeka IT & Cyber Solutions.
-        </p>
-
-        <p>
-            We have recorded your request for:
-            <strong>${escapeHtml(service)}</strong>
         </p>
 
         <p>

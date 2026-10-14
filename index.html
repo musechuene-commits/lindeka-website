@@ -871,30 +871,19 @@
 
 
                         <label>
-                            What do you need help with?
-
-                            <select name="service">
-                                <option>IT Health Check</option>
-                                <option>IT Support</option>
-                                <option>Cybersecurity, GRC & IT Risk</option>
-                                <option>Cyberbullying & Digital Forensics</option>
-                                <option>Social Media Account Recovery</option>
-                                <option>Microsoft & Cloud</option>
-                                <option>Data & Power BI / GIS Specialist Services</option>
-                            </select>
-                        </label>
-
-
-                        <label>
-                            Briefly tell us about your needs
+                            What is your biggest IT or Security headache right now?
 
                             <textarea
-                                required
                                 name="message"
                                 rows="4"
-                                placeholder="What would you like us to assess or improve?"
+                                maxlength="3000"
+                                placeholder="Tell us in your own words. Please don't include passwords or sensitive personal information."
+                                aria-describedby="enquiry-message-help"
                             ></textarea>
                         </label>
+                        <p class="form-note" id="enquiry-message-help">
+                            A short description is helpful, but you can leave this blank and we’ll follow up.
+                        </p>
 
 
                         <!-- Hidden anti-spam honeypot -->

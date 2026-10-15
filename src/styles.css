@@ -320,6 +320,7 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif}
 }
 .package-tag{font-size:10px;font-weight:700;letter-spacing:.15em;color:var(--accent)}
 .package h3{font-size:26px;margin:16px 0 10px}
+.package .package-price{font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:700;letter-spacing:-.035em;color:#eafcff;margin:0 0 14px}
 .package p{color:var(--muted);font-size:14px}
 .package ul{padding:0;list-style:none;font-size:13px;color:#a9b6c8;margin:22px 0}
 .package li{margin:9px 0}

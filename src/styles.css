@@ -1756,7 +1756,7 @@ img,svg{max-width:100%}
   .specialist-detail ul{grid-template-columns:1fr}
 }
 
-/* Homepage hero workspace image */
+/* Homepage hero graphic — keep the original animated shield/network SVG visible */
 .hero-visual img{
   display:block;
   width:100%;
@@ -1767,10 +1767,21 @@ img,svg{max-width:100%}
   border-radius:14px;
   box-shadow:0 12px 34px rgba(0,0,0,.28);
 }
-.hero-visual:before,
-.hero-visual:after{
-  display:none;
+/* The hero uses inline SVG, not a photo. Do not hide its animated overlays. */
+.hero-visual:before{
+  display:block;
+  animation:networkPulse 9s ease-in-out infinite;
 }
+.hero-visual:after{
+  display:block;
+  animation:radarSweep 8s linear infinite;
+  transform-origin:center;
+}
+.hero-visual circle{
+  animation:dataPulse 3.5s ease-in-out infinite;
+}
+.hero-visual circle:nth-child(3n){animation-delay:.7s}
+.hero-visual circle:nth-child(4n){animation-delay:1.3s}
 
 /* Improve visibility of the small technical label above the homepage hero image */
 .hero .container:before{

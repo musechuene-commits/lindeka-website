@@ -1216,8 +1216,8 @@ footer:before{
 
 /* Reduced motion remains comfortable for accessibility */
 @media(prefers-reduced-motion:reduce){
-  .hero-visual,
-  .hero-visual:after,
+  /* Keep the hero's subtle network pulse and radar sweep visible.
+     Disable the other non-essential decorative animations. */
   .hero-card:before,
   .hero-card .mini-metrics>div:after,
   .project-visual:before,

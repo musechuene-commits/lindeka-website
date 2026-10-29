@@ -902,7 +902,6 @@ footer:before{
 .visual-cyber svg path:first-child{fill:rgba(34,211,238,.06)}
 .visual-ai svg circle:first-child{fill:rgba(34,211,238,.08)}
 .visual-data svg circle{fill:#071522}
-.visual-gis svg circle{fill:#071522}
 .service-card:nth-child(2) .service-visual{background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.17),transparent 48%),linear-gradient(135deg,#07111e,#0a2434)}
 .service-card:nth-child(3) .service-visual{background:radial-gradient(circle at 50% 45%,rgba(45,212,191,.13),transparent 48%),linear-gradient(135deg,#07111e,#102522)}
 .service-card:nth-child(4) .service-visual{background:radial-gradient(circle at 50% 50%,rgba(99,102,241,.14),transparent 48%),linear-gradient(135deg,#07111e,#121b38)}
@@ -1019,7 +1018,6 @@ footer:before{
 .visual-project-id{background:radial-gradient(circle at 50% 50%,rgba(99,102,241,.12),transparent 45%),linear-gradient(135deg,#07111e,#111a34)}
 .visual-project-data{background:radial-gradient(circle at 60% 40%,rgba(34,211,238,.1),transparent 45%),linear-gradient(135deg,#07111e,#0b2030)}
 .visual-project-policy{background:radial-gradient(circle at 70% 50%,rgba(167,243,208,.08),transparent 45%),linear-gradient(135deg,#07111e,#10231f)}
-.visual-project-gis{background:radial-gradient(circle at 55% 45%,rgba(56,189,248,.1),transparent 45%),linear-gradient(135deg,#07111e,#0a2030)}
 .project:hover .project-visual{border-color:rgba(34,211,238,.35);transform:translateY(-2px);box-shadow:0 10px 32px rgba(34,211,238,.06)}
 .project-visual{transition:.3s ease}
 

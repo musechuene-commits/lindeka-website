@@ -65,9 +65,9 @@ export async function onRequestPost(context) {
                     from: "Lindeka Website <website@lindeka.co.za>",
                     to: ["info@lindeka.co.za"],
                     reply_to: email,
-                    subject: "New Website Enquiry",
+                    subject: "Free Discovery Call Request - Lindeka Website",
                     html: `
-                        <h2>New Website Enquiry</h2>
+                        <h2>Free Discovery Call Request</h2>
 
                         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
 
@@ -176,11 +176,11 @@ export async function onRequestPost(context) {
         <h1>Thank You, ${escapeHtml(name)}!</h1>
 
         <p>
-            Your enquiry has been received by Lindeka IT & Cyber Solutions.
+            Your free discovery call request has been received by Lindeka IT & Cyber Solutions.
         </p>
 
         <p>
-            We will review your enquiry and get back to you.
+            We will review your request and contact you to arrange a suitable time for a free introductory call.
         </p>
 
         <a href="https://lindeka.co.za/#contact">

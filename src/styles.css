@@ -1733,25 +1733,40 @@ img,svg{max-width:100%}
 }
 
 
-/* Specialist capability sits below the six core service cards. */
+/* Specialist services: clear full-width heading above a balanced three-card layout. */
 .specialist-services{
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:24px;
-  align-items:center;
-  margin-top:22px;
-  padding:26px 30px;
+  display:block;
+  margin-top:28px;
+  padding:30px;
   border:1px solid var(--line);
-  border-radius:10px;
-  background:linear-gradient(120deg,rgba(14,25,43,.72),rgba(8,16,29,.78));
+  border-radius:14px;
+  background:linear-gradient(145deg,rgba(14,25,43,.82),rgba(8,16,29,.94));
 }
-.specialist-heading .eyebrow{margin-bottom:8px}
-.specialist-heading h3{margin:0 0 8px;font-size:20px}
-.specialist-heading p{margin:0;color:var(--muted);line-height:1.65}
-.specialist-detail ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 20px;margin:0;padding-left:18px;color:var(--muted)}
-@media(max-width:760px){
-  .specialist-services{grid-template-columns:1fr;padding:22px;gap:16px}
-  .specialist-detail ul{grid-template-columns:1fr}
+.specialist-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:36px;
+  margin-bottom:26px;
+}
+.specialist-heading .eyebrow{margin-bottom:10px}
+.specialist-heading h2{margin:0;font-size:clamp(25px,3vw,34px);line-height:1.2;max-width:620px}
+.specialist-heading p{max-width:390px;margin:0;color:var(--muted);line-height:1.7}
+.specialist-services .pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.specialist-card{height:100%;border-radius:12px;border-top:2px solid rgba(34,211,238,.45);padding:24px}
+.specialist-card .pricing-category{margin-bottom:14px;letter-spacing:.09em}
+.specialist-card h3{font-size:19px;line-height:1.35;margin-bottom:12px}
+.specialist-card p{font-size:14px;line-height:1.75;color:var(--muted);margin:0}
+@media(max-width:900px){
+  .specialist-services .pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:720px){
+  .specialist-services{padding:20px}
+  .specialist-heading{display:block;margin-bottom:22px}
+  .specialist-heading h2{margin-bottom:12px}
+  .specialist-heading p{max-width:none}
+  .specialist-services .pricing-grid{grid-template-columns:1fr}
+  .specialist-card{padding:22px}
 }
 
 /* Homepage hero graphic — keep the original animated shield/network SVG visible */

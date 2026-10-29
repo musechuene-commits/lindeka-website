@@ -5,6 +5,7 @@ export async function onRequestPost(context) {
         const name = String(formData.get("name") || "").trim();
         const email = String(formData.get("email") || "").trim();
         const message = String(formData.get("message") || "").trim();
+        const service = String(formData.get("service") || "").trim();
         const website = String(formData.get("website") || "").trim();
 
         // Honeypot anti-spam check
@@ -73,6 +74,10 @@ export async function onRequestPost(context) {
 
                         <p><strong>Email:</strong>
                             ${escapeHtml(email)}
+                        </p>
+
+                        <p><strong>Service of interest:</strong>
+                            ${escapeHtml(service || "Not specified")}
                         </p>
 
                         <h3>Message</h3>
